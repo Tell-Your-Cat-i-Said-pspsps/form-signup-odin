@@ -1,0 +1,257 @@
+:root
+{
+    --bg-color-dark:#1e282d;
+    --bg-color-light: #FF725E;
+    --light-blue: #1a98e6;
+    --green: rgb(33, 250, 131);
+    --dusky-green: rgb(6, 170, 94);
+    --opac-white: rgba(255, 255, 255, .8);
+    height: 100%
+}
+body
+{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    font-family: "Ubuntu", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+h1
+{
+    letter-spacing: .1em;
+}
+.formHead
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color: var(--light-blue);
+    color: var(--opac-white);
+    align-items: center;
+    background-image: url('./signup-9.svg');
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.signupImg
+{
+    align-self: center;
+}
+.formBody
+{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    background-color: var(--bg-color-dark);
+}
+form
+{   
+    
+    align-self: center;
+    width: 80%;
+    color: var(--opac-white);
+    display: flex;
+    flex-direction: column;
+}
+.form-row
+{
+    position: relative;
+    margin: 12px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 120px;
+    min-width: 600px;
+}
+.inputGrp
+{   
+    display: flex;
+    flex-direction: column;
+    margin: 0 12px;
+    scroll-behavior: smooth;
+}
+.createAccountBtn
+{
+    background-color: var(--light-blue);
+    color: var(--opac-white);
+    border: 0;
+    padding: 8px 24px;
+    border-radius: 3px;
+    font-size: 20px;
+    letter-spacing: .05em;
+}
+.inputGrp input[type = "text"],
+.inputGrp input[type = "email"],
+.inputGrp input[type = "tel"],
+.inputGrp input[type = "password"]
+{
+   padding: 8px 0;
+   background-color: var(--bg-color-dark);
+   border: 0;
+   border-bottom: 1px solid #0e0d0d;
+   color: var(--opac-white);
+   outline: none;
+}   
+.signIn a:link,
+.signIn a:visited
+{
+    color: var(--light-blue);
+}
+
+.inputGrp input[type = "text"]:focus,
+.inputGrp input[type = "email"]:focus,
+.inputGrp input[type = "tel"]:focus,
+.inputGrp input[type = "password"]:focus
+{
+    outline: 1px solid var(--light-blue);
+    border-radius: 6px;
+}
+input:focus ~ span
+{
+    position: absolute;
+    top: -12px;
+    font-size: 10px;
+    margin-left: 6px;
+    background-color: var(--light-blue);
+    padding: 2px 8px;
+    letter-spacing: .1em;
+    opacity: 100%;
+    font-weight: 600;
+
+}
+
+input ~ span
+{
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    top: 0;
+    font-size: 16px;
+    margin-left: 6px;
+    padding: 2px 8px;
+    letter-spacing: .1em;
+    opacity: 50%;
+    pointer-events: none;
+    flex-basis: 200px;
+    flex-shrink: 0;
+}
+.validation {
+    display: inline;
+    width: 300px;
+    opacity: 0;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: crimson;
+    transition: opacity;
+    margin-top: 6px;
+}
+input:required:invalid:not(:placeholder-shown)
+{
+    outline: 1px solid crimson;
+    border-radius: 6px;
+}
+input[type="text"]:required:valid:not(:placeholder-shown),
+input[type="email"]:required:valid:not(:placeholder-shown),
+#password:required:valid:not(:placeholder-shown)
+{
+    outline: 1px solid var(--dusky-green);
+    border-radius: 6px;
+}
+#password:focus:invalid ~ .validation,
+input[type="email"]:focus:invalid ~ .validation,
+#phone:focus:invalid ~ .validation
+{
+    opacity: 100%;
+}
+#password:focus:valid ~ .validation,
+input[type="email"]:focus:valid ~ .validation,
+#phone:focus:valid ~ .validation
+{
+    color: var(--dusky-green);
+    opacity: 100%;
+}
+input[type="text"]:not(:placeholder-shown):valid ~ span,
+input[type="email"]:not(:placeholder-shown):valid ~ span,
+input[type="tel"]:not(:placeholder-shown):valid ~ span,
+#password:not(:placeholder-shown):valid ~ span,
+input[type="text"]:not(:placeholder-shown):invalid ~ span,
+input[type="email"]:not(:placeholder-shown):invalid ~ span,
+input[type="tel"]:not(:placeholder-shown):invalid ~ span,
+#password:not(:placeholder-shown):invalid ~ span,
+#valid,
+#invalid
+{
+    position: absolute;
+    top: -12px;
+    font-size: 10px;
+    margin-left: 6px;
+    padding: 2px 8px;
+    letter-spacing: .1em;
+    opacity: 100%;
+    font-weight: 600;
+}
+input[type="text"]:not(:placeholder-shown):invalid ~ span,
+input[type="email"]:not(:placeholder-shown):invalid ~ span,
+input[type="tel"]:not(:placeholder-shown):invalid ~ span,
+#password:not(:placeholder-shown):invalid ~ span,
+#invalid
+{
+    background-color: crimson;
+}
+input[type="text"]:not(:placeholder-shown):valid ~ span,
+input[type="email"]:not(:placeholder-shown):valid ~ span,
+input[type="tel"]:not(:placeholder-shown):valid ~ span,
+#password:not(:placeholder-shown):valid ~ span,
+#valid
+{
+    background-color: var(--dusky-green);
+}
+@media only screen and (max-width: 600px)
+{
+    body
+    {
+        flex-direction: column;
+    }
+    .formHead
+    {
+        flex-shrink: 0;
+        display: block;
+        height: 100%;
+    }
+    .form-row
+    {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        min-width: 100%;
+    }
+    .inputGrp
+    {
+        position: relative;
+        margin: 20px;
+    }
+    .formBody
+    {
+        padding: 16px 0;
+    }
+    footer
+    {
+        color: var(--opac-white);
+        position: static;
+    }
+
+}
+.formBody a
+{
+    color: #0e0d0d;
+}
+footer
+{
+    color: var(--opac-white);
+    position: absolute;
+    bottom: 0;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/38fd49cf3b.js" crossorigin="anonymous"></script>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="formHead">
+        <h1>companyName</h1>
+        <!-- <img src="./signup-9.svg" alt="signup" class="signupImg"/> -->
+    </div>
+    <div class="formBody">
+        <form onsubmit="return checkConPassSubmit()">
+            <div class="form-row"><h1>SIGN UP</h1></div>
+            <div class="form-row">
+                <div class="inputGrp">
+                    <label for="firstName"></label>
+                    <input type="text" name="firstName" id="firstName" required placeholder=""/>
+                    <span>FIRST NAME</span>
+                    <div class="validation">Not Valid</div>
+                </div>
+                <div class="inputGrp">
+                    <label for="lastName"></label>
+                    <input type="text" name="lastName" id="lastName" required placeholder=""/>
+                    <span>LAST NAME</span>
+                    <div class="validation">Not Valid</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="inputGrp">  
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" required placeholder=""/>
+                    <span>EMAIL</span>
+                    <div class="validation">*Please provide a valid Email</div>
+                </div>
+                <div class="inputGrp">
+                    <label for="phone"></label>
+                    <input type="text" name="phone" id="phone" required placeholder="" inputmode="tel" pattern="\d+"/>
+                    <span>PHONE</span>
+                    <div class="validation">*Please provide a valid Phone Number</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="inputGrp">
+                    <label for="password"></label>
+                    <input type="password" name="password" id="password" required placeholder="" pattern="(?=.*\d)(?=.*[a-z]).{8,}"/>
+                    <span>PASSWORD</span>
+                    <div class="validation">Must contain at least one number and lowercase letter, and at least 8 or more characters</div>
+                </div>
+                <div class="inputGrp confirmPassword">
+                    <label for="confirmPassword"></label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required placeholder=""/>
+                    <span>CONFIRM PASSWORD</span>
+                    <div class="validation">*Passwords do not match</div>
+                </div>
+            </div>
+            <div class="form-row">
+                <button class="createAccountBtn">Create Account</button>
+            </div>
+            <div class="signIn">
+                Already have an account? <a href="#">LOG IN</a>
+            </div>
+        </form>
+        <footer>Copyright &#169; Ahmed El-Bayoumi <a href="https://github.com/Tell-Your-Cat-i-Said-pspsps" target="_blank">
+            <i class="fa-brands fa-github" aria-hidden="true"></i></a></footer>
+    </div>
+
+</body>
+</html>

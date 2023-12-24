@@ -145,7 +145,6 @@ input ~ span
     font-weight: bold;
     font-family: sans-serif;
     color: crimson;
-    transition: opacity;
     margin-top: 6px;
 }
 input:required:invalid:not(:placeholder-shown)

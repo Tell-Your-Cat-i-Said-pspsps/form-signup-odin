@@ -3,11 +3,11 @@
     --bg-color-dark:#1e282d;
     --bg-color-light: #FF725E;
     --light-blue: #1a98e6;
-    --green: rgb(33, 250, 131);
     --dusky-green: rgb(6, 170, 94);
     --opac-white: rgba(255, 255, 255, .8);
     height: 100%
 }
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 body
 {
     height: 100%;
@@ -16,17 +16,12 @@ body
     font-family: "Ubuntu", sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-
 h1
 {
     letter-spacing: .1em;
 }
 .formHead
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     flex-grow: 1;
     background-color: var(--light-blue);
     color: var(--opac-white);
@@ -35,10 +30,12 @@ h1
     background-repeat: no-repeat;
     background-position: center; 
 }
+
 .signupImg
 {
     align-self: center;
 }
+
 .formBody
 {
     display: flex;
@@ -46,6 +43,7 @@ h1
     justify-content: center;
     background-color: var(--bg-color-dark);
 }
+
 form
 {   
     
@@ -55,6 +53,7 @@ form
     display: flex;
     flex-direction: column;
 }
+
 .form-row
 {
     position: relative;
@@ -65,6 +64,7 @@ form
     min-height: 120px;
     min-width: 600px;
 }
+
 .inputGrp
 {   
     display: flex;
@@ -208,6 +208,17 @@ input[type="tel"]:not(:placeholder-shown):valid ~ span,
 {
     background-color: var(--dusky-green);
 }
+
+.formBody a
+{
+    color: #0e0d0d;
+}
+footer
+{
+    color: var(--opac-white);
+    position: absolute;
+    bottom: 0;
+}
 @media only screen and (max-width: 600px)
 {
     body
@@ -237,20 +248,5 @@ input[type="tel"]:not(:placeholder-shown):valid ~ span,
     {
         padding: 16px 0;
     }
-    footer
-    {
-        color: var(--opac-white);
-        position: static;
-    }
 
-}
-.formBody a
-{
-    color: #0e0d0d;
-}
-footer
-{
-    color: var(--opac-white);
-    position: absolute;
-    bottom: 0;
 }
